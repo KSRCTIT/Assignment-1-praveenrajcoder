@@ -1,0 +1,47 @@
+Q2 – Operators & Conditions
+
+using System;
+
+class Q2
+{
+    static void Main()
+    {
+        int a = 10, b = 5;
+
+        // i) Calculator app
+        Console.WriteLine("Total = " + (a + b));
+        Console.WriteLine("Difference = " + (a - b));
+        Console.WriteLine("Pages copied = " + (a * b));
+        Console.WriteLine("Chocolates per kid = " + (a / b));
+        Console.WriteLine("Leftover = " + (a % b));
+
+        // ii) Player scores
+        int pA = 20, pB = 15;
+        Console.WriteLine("A > B ? " + (pA > pB));
+        Console.WriteLine("Equal ? " + (pA == pB));
+        Console.WriteLine("Failed to beat ? " + (pA <= pB));
+
+        // iii) Login check
+        string user = "admin", pass = "1234";
+        if (user == "admin" && pass == "1234") Console.WriteLine("Access Granted");
+        else Console.WriteLine("Access Denied");
+
+        Console.WriteLine("At least one correct? " + (user == "admin" || pass == "1234"));
+        Console.WriteLine("Not valid user? " + !(user == "admin"));
+
+        // iv) Quiz score
+        int score = 50;
+        score += 10; Console.WriteLine("Correct: " + score);
+        score -= 5; Console.WriteLine("Wrong: " + score);
+        score *= 2; Console.WriteLine("Bonus: " + score);
+        score /= 5; Console.WriteLine("Penalty: " + score);
+
+        // v) Voting eligibility for 5 people
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.Write("Enter age " + i + ": ");
+            int age = int.Parse(Console.ReadLine());
+            Console.WriteLine(age >= 18 ? "Eligible" : "Not Eligible");
+        }
+    }
+}
