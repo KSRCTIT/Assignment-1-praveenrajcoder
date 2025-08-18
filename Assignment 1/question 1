@@ -1,0 +1,44 @@
+Q1 – Literals & Data Types
+
+using System;
+
+class Q1
+{
+    static void Main()
+    {
+        // i) Temperature check
+        float temperature = 36.6f;
+        Console.WriteLine(temperature > 37.0f ? "Fever" : "Normal");
+
+        // ii) Age check
+        int age = 18;
+        Console.WriteLine(age >= 18 ? "Eligible to Vote" : "Not Eligible");
+
+        // iii) Gender check
+        char gender = 'M';
+        Console.WriteLine(gender == 'M' ? "Male" : gender == 'F' ? "Female" : "Other");
+
+        // iv) Final price after discount
+        double price = 1000.0, discount = 10.0;
+        Console.WriteLine("Final Price = " + (price - price * discount / 100));
+
+        // v) Login success
+        bool login = true;
+        Console.WriteLine(login ? "Login successful" : "Access denied");
+
+        // vi) Print literals with type
+        int age2 = 25;
+        float temp2 = 98.6f;
+        char grade = 'A';
+        bool isPassed = true;
+        Console.WriteLine($"{age2} : {age2.GetType()}");
+        Console.WriteLine($"{temp2} : {temp2.GetType()}");
+        Console.WriteLine($"{grade} : {grade.GetType()}");
+        Console.WriteLine($"{isPassed} : {isPassed.GetType()}");
+    }
+}
+
+
+
+
+

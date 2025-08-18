@@ -1,0 +1,56 @@
+
+Q3 – Loops, Arrays & Validation
+
+using System;
+using System.Linq;
+
+class Q3
+{
+    static void Main()
+    {
+        // i) ATM PIN system
+        int pin = 1234, tries = 0;
+        bool ok = false;
+        while (tries < 3)
+        {
+            Console.Write("Enter PIN: ");
+            int entered = int.Parse(Console.ReadLine());
+            if (entered == pin) { Console.WriteLine("Access Granted"); ok = true; break; }
+            tries++;
+        }
+        if (!ok) Console.WriteLine("Card Blocked");
+
+        // ii) Multiplication table
+        char again;
+        do
+        {
+            Console.Write("Enter number: ");
+            int num = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= 10; i++)
+                Console.WriteLine($"{num} x {i} = {num * i}");
+            Console.Write("Try another? (Y/N): ");
+            again = char.Parse(Console.ReadLine().ToUpper());
+        } while (again == 'Y');
+
+        // iii) Electricity bill
+        Console.Write("Enter units: ");
+        int u = int.Parse(Console.ReadLine());
+        int bill = u <= 100 ? u * 2 :
+                   u <= 200 ? 100 * 2 + (u - 100) * 3 :
+                              100 * 2 + 100 * 3 + (u - 200) * 5;
+        Console.WriteLine("Bill = ₹" + bill);
+
+        // iv) Average marks
+        int[] marks = new int[5];
+        Console.WriteLine("Enter 5 marks:");
+        for (int i = 0; i < 5; i++) marks[i] = int.Parse(Console.ReadLine());
+        double avg = marks.Average();
+        Console.WriteLine("Avg = " + avg + " → " + (avg >= 40 ? "Passed" : "Failed"));
+
+        // v) Name validation
+        Console.Write("Enter name: ");
+        string name = Console.ReadLine();
+        bool valid = name.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
+        Console.WriteLine(valid ? "Valid" : "Invalid");
+    }
+}
